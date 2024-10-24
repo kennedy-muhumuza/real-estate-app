@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Accordion,
   AccordionItem,
@@ -12,7 +12,7 @@ import {
   MdOutlineArrowDropDown,
   MdOutlineArrowDropDownCircle,
 } from "react-icons/md";
-import data from "../../utils/accordion.jsx";
+import data from "../../utils/accordion";
 import "./Value.css";
 // Demo styles, see 'Styles' section below for some notes on use.
 
@@ -47,10 +47,14 @@ const Value = () => {
             {data.map((item, i) => {
               const [className, setClassName] = useState(null);
               return (
-                <AccordionItem className={`accordionItem ${className}`} uuid={i} key={i}>
+                <AccordionItem
+                  className={`accordionItem ${className}`}
+                  uuid={i}
+                  key={i}
+                >
                   <AccordionItemHeading>
                     <AccordionItemButton className="flexCenter accordionButton ">
-                        {/* just for getting state of item */}
+                      {/* just for getting state of item */}
                       <AccordionItemState>
                         {({ expanded }) =>
                           expanded
@@ -59,11 +63,7 @@ const Value = () => {
                         }
                       </AccordionItemState>
                       <div className="flexCenter icon">{item.icon}</div>
-                      <span
-                        className="primaryText"
-                      >
-                        {item.heading}
-                      </span>
+                      <span className="primaryText">{item.heading}</span>
                       <div className="flexCenter icon">
                         <MdOutlineArrowDropDown size={20} />
                       </div>

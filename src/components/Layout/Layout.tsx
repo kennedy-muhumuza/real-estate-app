@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { Outlet } from "react-router-dom";
@@ -10,9 +10,8 @@ import useFavourites from "../../hooks/useFavourites";
 import useBookings from "../../hooks/useBookings";
 
 const Layout = () => {
-
-  useFavourites()
-  useBookings()
+  useFavourites();
+  useBookings();
 
   const { isAuthenticated, user, getAccessTokenWithPopup } = useAuth0();
   const { setUserDetails } = useContext(UserDetailContext);
@@ -24,7 +23,6 @@ const Layout = () => {
 
   useEffect(() => {
     const getTokenAndRegsiter = async () => {
-
       const res = await getAccessTokenWithPopup({
         authorizationParams: {
           audience: "http://localhost:8000",
@@ -33,9 +31,8 @@ const Layout = () => {
       });
       localStorage.setItem("access_token", res);
       setUserDetails((prev) => ({ ...prev, token: res }));
-      mutate(res)
+      mutate(res);
     };
-
 
     isAuthenticated && getTokenAndRegsiter();
   }, [isAuthenticated]);

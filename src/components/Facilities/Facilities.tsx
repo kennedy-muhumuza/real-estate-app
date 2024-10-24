@@ -2,11 +2,11 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { Box, Button, Group, NumberInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import React, { useContext } from "react";
-import UserDetailContext from "../../context/UserDetailContext.ts";
-import useProperties from "../../hooks/useProperties.tsx";
+import UserDetailContext from "../../context/UserDetailContext";
+import useProperties from "../../hooks/useProperties";
 import { useMutation } from "react-query";
 import { toast } from "react-toastify";
-import { createResidency } from "../../utils/api.ts";
+import { createResidency } from "../../utils/api";
 const Facilities = ({
   prevStep,
   propertyDetails,

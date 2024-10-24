@@ -2,6 +2,7 @@ import "./Hero.css";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
 import SearchBar from "../SearchBar/SearchBar";
+
 const Hero = () => {
   return (
     <section className="hero-wrapper">
@@ -11,12 +12,12 @@ const Hero = () => {
           <div className="hero-title">
             <div className="orange-circle" />
             <motion.h1
-            initial={{ y: "2rem", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 2,
-              type: "ease-in",
-            }}
+              initial={{ y: "2rem", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 2,
+                type: "ease-in",
+              }}
             >
               Discover <br />
               Most Suitable
@@ -28,7 +29,7 @@ const Hero = () => {
             <span>Forget all difficulties in finding a residence for you</span>
           </div>
 
-          <SearchBar/>
+          <SearchBar />
 
           <div className="flexCenter stats">
             <div className="flexColCenter stat">

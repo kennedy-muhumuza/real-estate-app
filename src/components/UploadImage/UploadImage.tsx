@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import "./UploadImage.css";
 import { Button, Group } from "@mantine/core";
+
 const UploadImage = ({
   propertyDetails,
   setPropertyDetails,
